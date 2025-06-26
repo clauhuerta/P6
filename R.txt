@@ -3,3 +3,5 @@ run -d -p 8083:8083 --name CHRG backend:latest
 docker run -d -p 8084:8084 --name FE frontend:latest 
 
 el pdf generado se llama info.pdf y se encuentra en la carpeta del Back (CHRG)
+
+https://github.com/clauhuerta/P6.git
