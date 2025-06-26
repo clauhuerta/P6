@@ -1,1 +1,2 @@
 REFERENCIAS
+run -d -p 8083:8083 --name CHRG backend:latest 
