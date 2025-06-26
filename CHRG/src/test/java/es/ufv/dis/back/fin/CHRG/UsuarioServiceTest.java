@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.List;
+import java.util.UUID;
 
 public class UsuarioServiceTest {
 
@@ -49,11 +50,11 @@ public class UsuarioServiceTest {
         Usuario u = service.getUsuarios().get(0);
         String original = u.getNombre();
 
-        u.setNombre("NombreNuevo");
+        u.setNombre("Nombre_" + UUID.randomUUID()); // Asegura que sea único
         service.updateUsuario(u.getId().toString(), u);
 
         Usuario modificado = service.getUsuarioPorId(u.getId().toString());
-        assertEquals("NombreNuevo", modificado.getNombre());
-        assertNotEquals(original, modificado.getNombre());
+        assertEquals(u.getNombre(), modificado.getNombre());
     }
+
 }

@@ -24,10 +24,15 @@ public class PDFGeneratorTest {
 
     @Test
     void generarPdfConArchivoInexistente() {
-        assertDoesNotThrow(() -> PDFGenerator.generar("no-existe.json", "fake.pdf"));
-        File f = new File("fake.pdf");
-        assertFalse(f.exists()); // no debe haberse creado
+        String fakeInput = "no-existe.json";
+        String fakeOutput = "fake.pdf";
+
+        PDFGenerator.generar(fakeInput, fakeOutput);
+
+        File f = new File(fakeOutput);
+        assertFalse(f.exists(), "El archivo PDF no debería haberse creado");
     }
+
 
     @Test
     void pdfContieneAlgoDeContenido() {
