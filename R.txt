@@ -1,2 +1,3 @@
 REFERENCIAS
 run -d -p 8083:8083 --name CHRG backend:latest 
+docker run -d -p 8084:8084 --name FE frontend:latest 
